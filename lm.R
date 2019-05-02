@@ -15,3 +15,5 @@ abline(elso.lm, col=2)
 elso.lm$coefficients[1]
 coef(elso.lm)
 summary(elso.lm)
+
+plot(elso.lm)
