@@ -4,6 +4,7 @@ teljes[1,14]
 éves <- as.numeric(as.character(teljes[, "J.D"]))
 plot(éves)
 temp.df <- data.frame(ido = 1880:2019,t = éves)
+View(temp.df)
 temp.df <- temp.df[-nrow(temp.df),]
 # Nem-paraméteres módszer lokális regresszió
 temp.lowess <- lowess(temp.df)
@@ -12,6 +13,7 @@ lines(temp.lowess)
 temp.lowess5 <- lowess(temp.df,f=1/28)
 lines(temp.lowess5, col=2)
 
+## Trendmentesítés
 plot(temp.df$ido, temp.df$t-temp.lowess5$y)
 lines(lowess(temp.df$ido, temp.df$t-temp.lowess5$y), col=2)
 
@@ -23,6 +25,7 @@ plot(temp.reg)
 ## Regresszió diagnosztika
 plot(resid(temp.reg) ~ temp.df$ido)
 lines(lowess(temp.df$ido, resid(temp.reg)),col=2)
+summary(temp.reg)
 
 ## Másodfokú polinom
 temp.reg2 <- lm(t ~ ido + I(ido^2), temp.df)
