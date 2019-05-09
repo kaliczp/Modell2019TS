@@ -33,7 +33,7 @@ tt2time <- seq(ISOdatetime(2007,4,10,13,46,00),ISOdatetime(2007,4,20,00,24,00),b
 plot(data.frame(tt2time,szv))
 
 szv.ts <- ts(szv, freq = 24*30)
-plot(szv.ts) # 2 perces mintavételezés
+plot(szv.ts, type="l") # 2 perces mintavételezés
 
 szv.dec <- decompose(szv.ts)
 plot(szv.dec)
