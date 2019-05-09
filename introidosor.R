@@ -16,6 +16,7 @@ lines(co2,lwd=2)
 
 ##Trend idősor nemparamétere szűrővel
 co2.ma3=filter(co2,c(1/3,1/3,1/3)) #Mozgó átlag 3 e. ablak
+<<<<<<< HEAD
 
 co2.ma3=filter(co2,c(1/3,1/3,1/3)) #Mozgó átlag 3 e. ablak
 co2.ma4=filter(co2,c(rep(1/4,4))) #Mozgó átlag 4 e. ablak
@@ -26,3 +27,6 @@ lines(co2.ma12,col=3)
 ##Dekompozíció mozgóátlaggal
 co2.dec <- decompose(co2)
 plot(co2.dec)
+=======
+lines(co2.ma3, col=2)
+>>>>>>> eb90415c00412d7243529362f95534a57cf7da15
